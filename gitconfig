@@ -1,0 +1,15 @@
+[color]
+	ui = true
+[alias]
+	ci = commit
+	st = status
+	glog = log --graph --decorate --all
+	co = checkout
+	slog = log --graph --decorate --all master^..HEAD
+    sl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	cdiff = diff --cached
+[user]
+	name = Wojciech Wojtyniak
+	email = wojciech@wojtyniak.com
+[include]
+    path = ~/.gitconfig-local
