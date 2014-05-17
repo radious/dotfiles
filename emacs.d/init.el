@@ -12,6 +12,7 @@
 
 ; various configuration
 (add-to-list 'load-path "~/.emacs.d/config")
+(load-library "programming-config")
 (load-library "lisp-config")
 (load-library "varia")
 (ignore-errors (load-theme 'zenburn t))
