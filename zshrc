@@ -5,7 +5,7 @@
 #
 
 if [ -f ~/.zshrc-local ]; then
-source ~/.zshrc-local
+  source ~/.zshrc-local
 fi
 
 autoload -U compinit
@@ -79,3 +79,9 @@ setopt pushdignoredups
 ## Word-delete should stop on / char
 autoload -U select-word-style
 select-word-style bash
+
+## OS X specific options ##
+
+if [ `uname`="Darwin" ]; then
+  alias ls='ls -G' # color ls
+fi
