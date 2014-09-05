@@ -13,3 +13,5 @@
 	email = wojciech@wojtyniak.com
 [include]
     path = ~/.gitconfig-local
+[push]
+	default = simple
