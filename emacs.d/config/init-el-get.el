@@ -1,8 +1,8 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-
-
 (when (eq system-type 'darwin) ;; use makeinfo from homebrew
-  (setenv "PATH" (concat "/usr/local/Cellar/texinfo/5.2/bin/:" "/usr/local/binL:" (getenv "PATH"))))
+  (setenv "PATH" (concat "/usr/local/Cellar/texinfo/5.2/bin/:" "/usr/local/bin:" (getenv "PATH")))
+  (setq exec-path (append '("/usr/local/Cellar/texinfo/5.2/bin/" "/usr/local/bin") exec-path)))
+
 
 (unless (require 'el-get nil t)
   (with-current-buffer
@@ -21,7 +21,7 @@
    paredit
    quack
    rainbow-delimiters
-   slime
+   ;; slime - quicklisp is taking care of it!
 ))
 
 (el-get 'sync my:el-get-packages)
