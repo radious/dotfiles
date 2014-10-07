@@ -16,3 +16,6 @@
 ;;;;;;;; GLOBAL HOOKS ;;;;;;;;
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode) ;; highlight parentheses
 (add-hook 'before-save-hook 'delete-trailing-whitespace) ;; delete trailing whitespaces
+
+;;;;;;;; TRAMP ;;;;;;;;
+(setq tramp-default-method "ssh")

@@ -16,6 +16,9 @@
     (add-to-list 'ac-modes 'go-mode)
     (require 'go-mode-load)))
 
+;; Don't use VC
+(setq vc-handled-backends 'nil)
+
 
 (provide 'programming-config)
 ;;; programming-config.el ends here
