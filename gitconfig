@@ -13,3 +13,7 @@
 	email = wojciech@wojtyniak.com
 [include]
     path = ~/.gitconfig-local
+[log]
+	decorate = true
+[url "https://github.com/"]
+	insteadOf = git://github.com/
