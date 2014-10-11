@@ -85,3 +85,7 @@ select-word-style bash
 if [ `uname`="Darwin" ]; then
   alias ls='ls -G' # color ls
 fi
+
+## Ruby
+RBENV_ROOT=/usr/local/var/rbenv # install gems in homebrew directory
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi # autocompletion
