@@ -1,3 +1,7 @@
+(when (file-exists-p "~/.emacs-local.d/preload.el")
+  (add-to-list 'load-path "~/.emacs-local.d")
+  (load-library "preload"))
+
 (add-to-list 'load-path "~/.emacs.d/config")
 (load-library "init-el-get") ;; start el-get
 

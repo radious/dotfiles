@@ -17,11 +17,13 @@
    auto-complete
    color-theme-zenburn
    flyspell
-   geiser
    paredit
-   quack
    rainbow-delimiters
    ;; slime - quicklisp is taking care of it!
 ))
+
+(when (eq system-type 'darwin) ;; only on my mac workstations
+  (setq my:el-get-packages
+        (append my:el-get-packages '(geiser quack))))
 
 (el-get 'sync my:el-get-packages)
