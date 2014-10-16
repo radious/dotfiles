@@ -8,6 +8,7 @@
 
 ;;;;;;;; SPELLCHECKING ;;;;;;;;
 (setq-default ispell-program-name "/usr/local/bin/aspell") ;; use aspell
+(add-hook 'org-mode-hook 'flyspell-mode) ;; flyspell for orgmode by default
 
 ;;;;;;;; AUTOCOMPLETE ;;;;;;;;
 (when (require 'auto-complete-config nil 'noerror) ; need my ac
