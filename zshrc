@@ -88,4 +88,4 @@ fi
 
 ## Ruby
 RBENV_ROOT=/usr/local/var/rbenv # install gems in homebrew directory
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi # autocompletion
+if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi # autocompletion
