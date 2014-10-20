@@ -20,3 +20,6 @@
 
 ;;;;;;;; TRAMP ;;;;;;;;
 (setq tramp-default-method "ssh")
+
+;;;;;;;; REMOTE LOCALS ;;;;;;;;
+;; Enable local dir settings on remote hosts, I want to trust them
