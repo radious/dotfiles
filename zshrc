@@ -85,3 +85,12 @@ select-word-style bash
 if [ `uname`="Darwin" ]; then
   alias ls='ls -G' # color ls
 fi
+
+## Ruby
+RBENV_ROOT=/usr/local/var/rbenv # install gems in homebrew directory
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi # autocompletion
+
+## Basic settings
+export MANCOLOR=1 # colores!
+export PAGER=less # who'd youse more?
+alias less='less -isR' # R for colors, i for case-agnostic search s for squeezing lines
