@@ -82,9 +82,17 @@ select-word-style bash
 
 ## OS X specific options ##
 
-if [ `uname`="Darwin" ]; then
-  alias ls='ls -G' # color ls
-fi
+case `uname` in
+    FreeBSD)
+        alias ls='ls -FG'
+        ;;
+    Darwin)
+        alias ls='ls -FG'
+        ;;
+    Linux)
+        alias ls='ls -F --color=auto'
+        ;;
+esac
 
 ## Ruby
 RBENV_ROOT=/usr/local/var/rbenv # install gems in homebrew directory
