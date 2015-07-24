@@ -33,4 +33,4 @@
 
 
 ;;;;;;;; RACKET ;;;;;;;;
-(setq geiser-racket-binary "/Applications/Racket v6.1/bin/racket")
+(setq geiser-racket-binary "/usr/local/bin/racket")
