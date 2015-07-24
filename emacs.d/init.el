@@ -5,6 +5,9 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 (load-library "init-el-get") ;; start el-get
 
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 ;; various configuration
 (add-to-list 'load-path "~/.emacs.d/config")
 (load-library "editing")

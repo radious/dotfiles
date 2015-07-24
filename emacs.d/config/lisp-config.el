@@ -33,4 +33,6 @@
 
 
 ;;;;;;;; RACKET ;;;;;;;;
-(setq geiser-racket-binary "/usr/local/bin/racket")
+(add-to-list 'interpreter-mode-alist '("racket" . scheme-mode))
+(setq geiser-default-implementation)
+(setq geiser-racket-binary "racket")

@@ -16,6 +16,7 @@
  '(el-get ; el-get is self hosting
    auto-complete
    color-theme-zenburn
+   exec-path-from-shell
    flyspell
    paredit
    rainbow-delimiters
