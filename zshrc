@@ -34,6 +34,8 @@ setopt SHARE_HISTORY
 ## disable mail checking
 #MAILCHECK=0
 
+export PATH=~/.alias:$PATH
+
 export EDITOR=emacs
 
 autoload -U colors
