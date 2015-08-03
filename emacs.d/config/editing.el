@@ -23,3 +23,20 @@
 
 ;;;;;;;; REMOTE LOCALS ;;;;;;;;
 ;; Enable local dir settings on remote hosts, I want to trust them
+
+;;;;;;;; BAKUCP ;;;;;;;;
+;; Backup remote files locally to stop autosave pain
+(setq tramp-backup-directory "~/.emacs-backup")
+(unless (file-directory-p tramp-backup-directory)
+  (make-directory tramp-backup-directory))
+(if (file-accessible-directory-p tramp-backup-directory)
+    (setq tramp-auto-save-directory tramp-backup-directory)
+  (error "Cannot write to ~/.emacs-backup"))
+;; Don't backup su and sudo files
+(setq backup-enable-predicate
+      (lambda (name)
+        (and (normal-backup-enable-predicate name)
+             (not
+              (let ((method (file-remote-p name 'method)))
+                (when (stringp method)
+                  (member method '("su" "sudo"))))))))
