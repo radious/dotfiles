@@ -19,3 +19,5 @@
 	insteadOf = git://github.com/
 [push]
 	default = simple
+[branch]
+  autosetup = rebase
