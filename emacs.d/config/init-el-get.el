@@ -17,6 +17,7 @@
    auto-complete
    color-theme-zenburn
    exec-path-from-shell
+   flymake-cursor
    flyspell
    paredit
    rainbow-delimiters
