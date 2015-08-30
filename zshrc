@@ -24,6 +24,8 @@ setopt APPEND_HISTORY
 ## for sharing history between zsh processes
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+# Don't save commands starting with space in history
+setopt histignorespace
 
 ## never ever beep ever
 #setopt NO_BEEP
