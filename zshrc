@@ -36,7 +36,7 @@ setopt histignorespace
 ## disable mail checking
 #MAILCHECK=0
 
-export PATH=~/.alias:$PATH
+export PATH=~/bin:~/.alias:$PATH
 
 export EDITOR=emacs
 
