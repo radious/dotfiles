@@ -19,6 +19,7 @@
    exec-path-from-shell
    flymake-cursor
    flyspell
+   go-mode
    paredit
    rainbow-delimiters
    ;; slime - quicklisp is taking care of it!
