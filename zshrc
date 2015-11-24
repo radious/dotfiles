@@ -106,3 +106,10 @@ if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi # autocompletion
 export MANCOLOR=1 # colores!
 export PAGER=less # who'd youse more?
 alias less='less -isR' # R for colors, i for case-agnostic search s for squeezing lines
+
+## Go
+GODIR=~/Programming/go
+if [[ -d ~/Programming/go ]]; then
+    export GOPATH=$GODIR
+    export PATH=$PATH:$GODIR
+fi
