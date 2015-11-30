@@ -17,6 +17,7 @@
  '(el-get ; el-get is self hosting
    auto-complete
    color-theme-zenburn
+   crontab-mode
    exec-path-from-shell
    flymake-cursor
    flyspell
