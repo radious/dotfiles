@@ -113,3 +113,10 @@ if [[ -d ~/Programming/go ]]; then
     export GOPATH=$GODIR
     export PATH=$PATH:$GODIR
 fi
+
+## Python
+venvwrapper="/usr/local/bin/virtualenvwrapper.sh"
+if [[ -r $venvwrapper ]]; then
+    export WORKON_HOME=~/.venvs
+    source "$venvwrapper"
+fi
