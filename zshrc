@@ -36,10 +36,6 @@ setopt histignorespace
 ## disable mail checking
 #MAILCHECK=0
 
-export PATH=~/bin:~/.alias:$PATH
-
-export EDITOR=emacs
-
 autoload -U colors
 colors
 
@@ -104,20 +100,7 @@ if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi # autocompletion
 
 ## Basic settings
 export MANCOLOR=1 # colores!
-export PAGER=less # who'd youse more?
 alias less='less -isR' # R for colors, i for case-agnostic search s for squeezing lines
-
-## Go
-GODIR=~/Programming/go
-if [[ -d $GODIR ]]; then
-    GOBIN=$GODIR/bin
-    if [[ -d $GOBIN ]]; then
-        export PATH=$PATH:$GOBIN
-    fi
-    if [[ -z "$GOPATH" ]]; then
-        export GOPATH=$GODIR
-    fi
-fi
 
 ## Python
 venvwrapper="/usr/local/bin/virtualenvwrapper.sh"
