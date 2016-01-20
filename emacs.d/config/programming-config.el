@@ -16,6 +16,10 @@
     (add-to-list 'ac-modes 'go-mode)
     (require 'go-mode-load)))
 
+(setq gofmt-command "goimports")
+(add-hook 'before-save-hook 'gofmt-before-save)
+(add-hook 'go-mode-hook 'electric-pair-mode)
+
 ;; Don't use VC
 (setq vc-handled-backends 'nil)
 
