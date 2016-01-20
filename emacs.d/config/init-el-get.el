@@ -1,8 +1,9 @@
+(require 'cl-lib)
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(when (eq system-type 'darwin) ;; use makeinfo from homebrew
-  (setenv "PATH" (concat "/usr/local/Cellar/texinfo/5.2/bin/:" "/usr/local/bin:" (getenv "PATH")))
-  (setq exec-path (append '("/usr/local/Cellar/texinfo/5.2/bin/" "/usr/local/bin") exec-path)))
 
+(let ((extra-paths (cl-remove-if-not 'file-directory-p '("/usr/local/Cellar/texinfo/5.2/bin/" "/usr/local/bin" "/Library/TeX/texbin/"))))
+  (setenv "PATH "(mapconcat 'identity (append extra-paths (list (getenv "PATH"))) ":" ))
+  (setq exec-path (append extra-paths exec-path)))
 
 (unless (require 'el-get nil t)
   (with-current-buffer
