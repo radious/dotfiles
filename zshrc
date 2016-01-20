@@ -109,9 +109,14 @@ alias less='less -isR' # R for colors, i for case-agnostic search s for squeezin
 
 ## Go
 GODIR=~/Programming/go
-if [[ -d ~/Programming/go ]]; then
-    export GOPATH=$GODIR
-    export PATH=$PATH:$GODIR
+if [[ -d $GODIR ]]; then
+    GOBIN=$GODIR/bin
+    if [[ -d $GOBIN ]]; then
+        export PATH=$PATH:$GOBIN
+    fi
+    if [[ -z "$GOPATH" ]]; then
+        export GOPATH=$GODIR
+    fi
 fi
 
 ## Python
