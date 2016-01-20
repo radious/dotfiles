@@ -15,7 +15,6 @@
 (setq
  my:el-get-packages
  '(el-get ; el-get is self hosting
-   auctex
    auto-complete
    color-theme-zenburn
    exec-path-from-shell
@@ -27,6 +26,10 @@
    yaml-mode
    ;; slime - quicklisp is taking care of it!
 ))
+
+(when (executable-find "latex")
+  (setq my:el-get-packages
+        (append my:el-get-packages '(auctex))))
 
 (when (eq system-type 'darwin) ;; only on my mac workstations
   (setq my:el-get-packages
