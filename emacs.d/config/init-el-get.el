@@ -14,6 +14,7 @@
 (setq
  my:el-get-packages
  '(el-get ; el-get is self hosting
+   auctex
    auto-complete
    color-theme-zenburn
    exec-path-from-shell
