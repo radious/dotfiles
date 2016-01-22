@@ -8,7 +8,9 @@
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function 'split-window-horizontally)
 
-
+;;;; GO
+;; Get GOPATH from
+(exec-path-from-shell-copy-env "GOPATH")
 ;; Load go mode
 (let ((goroot "/usr/local/opt/go/libexec/misc/emacs/"))
   (when (file-readable-p goroot)
