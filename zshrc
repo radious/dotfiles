@@ -80,6 +80,9 @@ setopt pushdignoredups
 autoload -U select-word-style
 select-word-style bash
 
+### Report time for every command that takes more than 3s
+REPORTTIME=3
+
 ## OS X specific options ##
 
 case `uname` in
