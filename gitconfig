@@ -23,3 +23,5 @@
   autosetup = rebase
 [pull]
 	rebase = true
+[core]
+	excludesfile = ~/.gitignore_global
