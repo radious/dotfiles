@@ -24,6 +24,7 @@
    go-mode
    paredit
    rainbow-delimiters
+   toml-mode
    yaml-mode
    ;; slime - quicklisp is taking care of it!
 ))
