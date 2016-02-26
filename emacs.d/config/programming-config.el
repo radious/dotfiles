@@ -28,5 +28,10 @@
 ;; flymake
 (require 'flymake-cursor)  ;; Hoover over error to show help message
 
+;; disable flymake for HTML
+(require 'flymake)
+(delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
+
+
 (provide 'programming-config)
 ;;; programming-config.el ends here
