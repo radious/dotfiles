@@ -11,8 +11,13 @@
 
 ;;;;;;;; SPELLCHECKING ;;;;;;;;
 (setq-default ispell-program-name "/usr/local/bin/aspell") ;; use aspell
+
+;;;;;;;; ORG-mode ;;;;;;;;
 (add-hook 'org-mode-hook 'flyspell-mode) ;; flyspell for orgmode by default
 (add-hook 'org-mode-hook 'visual-line-mode)
+
+;;;;;;;; Markdown ;;;;;;;;
+(add-hook 'markdown-mode-hook 'flyspell-mode)
 
 ;;;;;;;; AUTOCOMPLETE ;;;;;;;;
 (when (require 'auto-complete-config nil 'noerror) ; need my ac
