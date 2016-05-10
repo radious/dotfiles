@@ -11,6 +11,9 @@ fi
 autoload -U compinit
 compinit -i
 
+# locale
+export LANG=en_US.UTF-8
+
 #allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
 
