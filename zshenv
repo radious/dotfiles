@@ -3,6 +3,7 @@ export LANG=en_US.UTF-8
 
 # path
 export PATH=~/bin:~/.alias:$PATH
+export ALTERNATE_EDITOR=''
 export EDITOR=emacs
 export PAGER=less
 

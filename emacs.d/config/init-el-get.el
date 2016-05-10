@@ -29,9 +29,10 @@
    ;; slime - quicklisp is taking care of it!
 ))
 
-(when (executable-find "latex")
-  (setq my:el-get-packages
-        (append my:el-get-packages '(auctex))))
+;; Breaks sometimes, comented for future reference
+;; (when (executable-find "latex")
+;;   (setq my:el-get-packages
+;;         (append my:el-get-packages '(auctex))))
 
 (when (eq system-type 'darwin) ;; only on my mac workstations
   (setq my:el-get-packages
