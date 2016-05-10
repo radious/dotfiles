@@ -1,3 +1,7 @@
+# locale
+export LANG=en_US.UTF-8
+
+# path
 export PATH=~/bin:~/.alias:$PATH
 export EDITOR=emacs
 export PAGER=less
