@@ -12,6 +12,7 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 (load-library "editing")
 (load-library "darwin")
+(load-library "linux")
 (load-library "programming-config")
 (load-library "lisp-config")
 

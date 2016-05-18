@@ -28,7 +28,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace) ;; delete trailing whitespaces
 
 ;;;;;;;; TRAMP ;;;;;;;;
-(setq tramp-default-method "ssh")
+(setq tramp-default-method "sshx")
 
 ;;;;;;;; REMOTE LOCALS ;;;;;;;;
 ;; Enable local dir settings on remote hosts, I want to trust them
