@@ -11,6 +11,7 @@
 ;; various configuration
 (add-to-list 'load-path "~/.emacs.d/config")
 (load-library "editing")
+(load-library "navigation")
 (load-library "darwin")
 (load-library "linux")
 (load-library "programming-config")

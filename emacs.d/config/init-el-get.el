@@ -15,6 +15,7 @@
 (setq
  my:el-get-packages
  '(el-get ; el-get is self hosting
+   ace-window
    auto-complete
    color-theme-zenburn
    crontab-mode
