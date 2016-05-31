@@ -51,5 +51,5 @@
                   (member method '("su" "sudo"))))))))
 
 ;;;;;;;; VARIA ;;;;;;;;
-;; Allow diabled commands
+;; Allow disabled commands
 (put 'narrow-to-region 'disabled nil)
