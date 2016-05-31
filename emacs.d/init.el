@@ -10,6 +10,7 @@
 
 ;; various configuration
 (add-to-list 'load-path "~/.emacs.d/config")
+(load-library "general")
 (load-library "editing")
 (load-library "navigation")
 (load-library "darwin")
@@ -17,16 +18,11 @@
 (load-library "programming-config")
 (load-library "lisp-config")
 
-;; load my favourite theme
-(ignore-errors (load-theme 'zenburn t))
-
 ; load local configuration if present
 (when (file-exists-p "~/.emacs-local.d/local.el")
     (add-to-list 'load-path "~/.emacs-local.d")
     (load-library "local"))
 
-;; varia
-(if window-system
-        (tool-bar-mode 0)) ; don't want toolbar on my display
-(column-number-mode) ; like to see columns
-(show-paren-mode 1) ; match my parens!
+;; load my favourite theme
+;; code is placed here so lack of theme would notify me about errors I might ignore otherwise
+(ignore-errors (load-theme 'zenburn t))
