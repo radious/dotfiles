@@ -8,9 +8,12 @@
 ;;; Code:
 
 ;; Disable tool-bar in graphic mode and menu-bar in console mode
-(if (display-graphic-p)
-    (tool-bar-mode 0)
-  (menu-bar-mode 0))
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
+
+;; Set font to anonymous pro
+(set-face-attribute 'default nil :family "Anonymous Pro" :height 100)
 
 ;; varia
 (column-number-mode) ; like to see columns
