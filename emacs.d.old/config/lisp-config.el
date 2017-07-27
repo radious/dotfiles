@@ -33,6 +33,6 @@
 
 
 ;;;;;;;; RACKET ;;;;;;;;
-(add-to-list 'interpreter-mode-alist '("racket" . scheme-mode))
-(setq geiser-default-implementation)
-(setq geiser-racket-binary "racket")
+;; (add-to-list 'interpreter-mode-alist '("racket" . scheme-mode))
+;; (setq geiser-default-implementation)
+;; (setq geiser-racket-binary "racket")

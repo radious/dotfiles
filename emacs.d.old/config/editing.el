@@ -10,7 +10,10 @@
 (setq truncate-lines t)
 
 ;;;;;;;; SPELLCHECKING ;;;;;;;;
-(setq-default ispell-program-name "/usr/local/bin/aspell") ;; use aspell
+                                        ;(setq-default ispell-program-name "/usr/local/bin/aspell") ;; use aspell
+;; (setq ispell-program-name "hunspell")
+;; (setq ispell-local-dictionary "en_US")
+;; (setq ispell-local-dictionary-alist '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US,pl_PL") nil utf-8)))
 
 ;;;;;;;; ORG-mode ;;;;;;;;
 (add-hook 'org-mode-hook 'flyspell-mode) ;; flyspell for orgmode by default
@@ -18,6 +21,7 @@
 
 ;;;;;;;; Markdown ;;;;;;;;
 (add-hook 'markdown-mode-hook 'flyspell-mode)
+(add-hook 'markdown-mode-hook 'visual-line-mode)
 
 ;;;;;;;; AUTOCOMPLETE ;;;;;;;;
 (when (require 'auto-complete-config nil 'noerror) ; need my ac
@@ -25,7 +29,7 @@
 
 ;;;;;;;; GLOBAL HOOKS ;;;;;;;;
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode) ;; highlight parentheses
-(add-hook 'before-save-hook 'delete-trailing-whitespace) ;; delete trailing whitespaces
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace) ;; delete trailing whitespaces
 
 ;;;;;;;; TRAMP ;;;;;;;;
 (setq tramp-default-method "sshx")

@@ -16,14 +16,14 @@
  my:el-get-packages
  '(el-get ; el-get is self hosting
    ace-window
-   auto-complete
+   ;; auto-complete
    color-theme-zenburn
    crontab-mode
    exec-path-from-shell
    flymake-cursor
    flyspell
    go-mode
-   paredit
+   ;; paredit
    rainbow-delimiters
    toml-mode
    yaml-mode
@@ -35,8 +35,8 @@
 ;;   (setq my:el-get-packages
 ;;         (append my:el-get-packages '(auctex))))
 
-(when (eq system-type 'darwin) ;; only on my mac workstations
-  (setq my:el-get-packages
-        (append my:el-get-packages '(geiser quack))))
+;; (when (eq system-type 'darwin) ;; only on my mac workstations
+;;   (setq my:el-get-packages
+;;         (append my:el-get-packages '(geiser quack))))
 
 (el-get 'sync my:el-get-packages)
