@@ -30,6 +30,8 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     python
+     ruby
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -48,7 +50,7 @@ This function should only modify configuration layer settings."
      ;;        shell-default-position 'bottom)
      spell-checking
      ;; syntax-checking
-     ;; version-control
+     version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -328,6 +330,11 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-pretty-docs nil
    ))
 
+(defun dotspacemacs/load-local-config ()
+  "Look for local configuration file and load user-init and user-config from them"
+  (if (file-readable-p "~/.spacemacs-local")
+       (load "~/.spacemacs-local")))
+
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init', before layer configuration
@@ -335,10 +342,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  ;; (setq-default mac-right-option-modifier nil)
-  ;; (setq-)
-  ;; (add-hook 'text-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
-   )
+  ;; Load local user-init if present
+  (dotspacemacs/load-local-config)
+  (if (fboundp 'dotspacemacs/user-init-local)
+      (dotspacemacs/user-init-local))
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -347,10 +355,13 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (setq-default evil-escape-key-sequence "jk") 
-  (setq mac-command-modifier 'meta) ; right cmd is now meta
-  (setq mac-right-option-modifier nil) ; right alt is right alt, no modifiers
-  )
+  (if (fboundp 'dotspacemacs/user-config-local)
+      (dotspacemacs/user-config-local))
+  (setq-default evil-escape-key-sequence "jk")
+  (when (eq system-type 'darwin)
+    (setq mac-command-modifier 'meta) ; right cmd is now meta
+    (setq mac-right-option-modifier nil)) ; right alt is right alt, no modifiers
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
