@@ -363,6 +363,7 @@ you should place your code here."
   (when (eq system-type 'darwin)
     (setq mac-command-modifier 'meta) ; right cmd is now meta
     (setq mac-right-option-modifier nil)) ; right alt is right alt, no modifiers
+  (setq vc-follow-symlinks t)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
