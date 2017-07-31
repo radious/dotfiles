@@ -346,6 +346,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (dotspacemacs/load-local-config)
   (if (fboundp 'dotspacemacs/user-init-local)
       (dotspacemacs/user-init-local))
+  (when dotspacemacs-directory
+    (setq custom-file (concat dotspacemacs-directory "custom.el")))
 )
 
 (defun dotspacemacs/user-config ()
