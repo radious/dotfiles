@@ -41,7 +41,7 @@ This function should only modify configuration layer settings."
      python
      ruby
      spell-checking
-     syntax-checking
+     ; syntax-checking
      version-control
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -333,8 +333,8 @@ It should only modify the values of Spacemacs settings."
 
 (defun dotspacemacs/load-local-config ()
   "Look for local configuration file and load user-init and user-config from them"
-  (if (file-readable-p "~/.spacemacs-local")
-       (load "~/.spacemacs-local")))
+  (if (file-readable-p "~/.spacemacs.d/local.el")
+       (load "~/.spacemacs.d/local.el")))
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -348,8 +348,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (if (fboundp 'dotspacemacs/user-init-local)
       (dotspacemacs/user-init-local))
   (when dotspacemacs-directory
-    (setq custom-file (concat dotspacemacs-directory "custom.el")))
+    (let ((dotspacemacs-custom-file (concat dotspacemacs-directory "custom.el")))
+      (setq custom-file dotspacemacs-custom-file)
+      (load-file dotspacemacs-custom-file)))
 )
+
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
