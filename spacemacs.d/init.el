@@ -33,6 +33,7 @@ This function should only modify configuration layer settings."
      auto-completion
      emacs-lisp
      git
+     (go :variables gofmt-command "goimports")
      helm
      javascript
      markdown
