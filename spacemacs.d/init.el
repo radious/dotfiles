@@ -42,7 +42,7 @@ This function should only modify configuration layer settings."
      python
      ruby
      spell-checking
-     ; syntax-checking
+     ;; syntax-checking
      version-control
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
