@@ -5,8 +5,9 @@
 	st = status
 	glog = log --graph --decorate --all
 	co = checkout
-	slog = log --graph --decorate --all master^..HEAD
-    sl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	smartlog = "log --graph --pretty=format:'commit: %C(bold red)%h%Creset %C(red)<%H>%Creset %C(bold magenta)%d %Creset%ndate: %C(bold yellow)%cd %Creset%C(yellow)%cr%Creset%nauthor: %C(bold blue)%an%Creset %C(blue)<%ae>%Creset%n%C(cyan)%s%n%Creset'"
+  slog = log --graph --decorate --all master^..HEAD
+  sl = !git smartlog 
 	cdiff = diff --cached
 [user]
 	name = Wojciech Wojtyniak
