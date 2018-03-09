@@ -339,6 +339,8 @@ you should place your code here."
     (setq mac-command-modifier 'meta) ; right cmd is now meta
     (setq mac-right-option-modifier nil)) ; right alt is right alt, no modifiers
   (setq vc-follow-symlinks t)
+  (add-hook 'org-mode-hook 'visual-line-mode)
+  (add-hook 'markdown-mode-hook 'visual-line-mode)
   (spacemacs/toggle-auto-fill-mode-off)
   (spacemacs/toggle-visual-line-navigation-on)
 )

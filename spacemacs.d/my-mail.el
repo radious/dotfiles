@@ -4,7 +4,7 @@
 
 (setq
  mu4e-mu-binary "/usr/local/bin/mu"
- mu4e-maildir       "~/Maildir"   ;; top-level Maildir
+ mu4e-maildir       "~/Maildir" ;; top-level Maildir
  mu4e-get-mail-command "mbsync -a"
  mu4e-update-interval 300
  ;; mu4e-view-show-images t
@@ -18,7 +18,8 @@
  mu4e-enable-mode-line t
  spaceline-mu4e-alert-segment-p t
  mu4e-alert-interesting-mail-query "flag:unread AND (maildir:\"/fb/inbox\")" ; OR maildir:\"/wojtyniak/inbox\")"
- mu4e-split-view 'vertical)
+ mu4e-split-view 'vertical
+ fill-flowed-display-column 1)
 
 (add-to-list 'mu4e-view-actions '("View in browser" . mu4e-action-view-in-browser) t)
 (add-hook 'mu4e-compose-mode-hook 'flyspell-mode)
