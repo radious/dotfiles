@@ -28,9 +28,8 @@ host outlook.office365.com
 User wojtyniak@fb.com
 PassCmd "security find-generic-password -a wojtyniak@fb.com -w"
 SSLType IMAPS
-CertificateFile ~/.outlookcerts
-PipelineDepth 2
 Timeout 600
+#PipelineDepth 2 # Uncomment in case of problems with syncing
 
 IMAPStore fb-remote
 Account fb 
