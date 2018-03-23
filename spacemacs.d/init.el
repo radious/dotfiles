@@ -341,6 +341,7 @@ you should place your code here."
   (setq vc-follow-symlinks t)
   (add-hook 'org-mode-hook 'visual-line-mode)
   (add-hook 'markdown-mode-hook 'visual-line-mode)
+  (add-to-list 'org-export-backends 'md)
   (spacemacs/toggle-auto-fill-mode-off)
   (spacemacs/toggle-visual-line-navigation-on)
 )

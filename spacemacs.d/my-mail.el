@@ -19,10 +19,11 @@
  spaceline-mu4e-alert-segment-p t
  mu4e-alert-interesting-mail-query "flag:unread AND (maildir:\"/fb/inbox\")" ; OR maildir:\"/wojtyniak/inbox\")"
  mu4e-split-view 'vertical
- fill-flowed-display-column 1)
+ fill-flowed-display-column nil)
 
 (add-to-list 'mu4e-view-actions '("View in browser" . mu4e-action-view-in-browser) t)
 (add-hook 'mu4e-compose-mode-hook 'flyspell-mode)
+(add-hook 'mu4e-view-mode-hook 'visual-line-mode)
 
 ;; Configure sending mail.
 (setq message-send-mail-function 'message-send-mail-with-sendmail
