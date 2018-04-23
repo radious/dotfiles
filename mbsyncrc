@@ -2,7 +2,7 @@ IMAPAccount wojtyniak
 host imap.fastmail.com
 port 993
 User wojciech@wojtyniak.com
-PassCmd "security find-generic-password -a wojciech@wojtyniak.com -w"
+PassCmd "security find-generic-password -a wojciech@wojtyniak.com -w -l 'wojtyniak imap'"
 SSLType IMAPS
 
 IMAPStore wojtyniak-remote
