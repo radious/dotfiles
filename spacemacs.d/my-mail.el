@@ -20,7 +20,10 @@
  mu4e-alert-interesting-mail-query "flag:unread AND (maildir:\"/fb/inbox\")" ; OR maildir:\"/wojtyniak/inbox\")"
  mu4e-split-view 'vertical
  fill-flowed-display-column nil
- mu4e-user-mail-address-list '("wojciech@wojtyniak.com" "wojtyniak@fb.com"))
+ mu4e-user-mail-address-list '("wojciech@wojtyniak.com" "wojtyniak@fb.com")
+ mu4e-index-cleanup nil      ;; don't do a full cleanup check
+ mu4e-index-lazy-check t    ;; don't consider up-to-date dirs
+)
 
 (add-to-list 'mu4e-view-actions '("View in browser" . mu4e-action-view-in-browser) t)
 (add-hook 'mu4e-compose-mode-hook 'flyspell-mode)
