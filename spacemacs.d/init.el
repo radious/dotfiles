@@ -475,7 +475,6 @@ you should place your code here."
   (spacemacs/toggle-visual-line-navigation-on)
   (setq org-capture-templates
         '(("j" "A journal entry" entry (file+olp+datetree "~/Dropbox (Personal)/notes/journal.org.gpg") "* %?\nUtworzono: %U")))
-  (spacemacs/loadenv)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
