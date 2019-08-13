@@ -20,6 +20,16 @@ if [[ -d $GODIR ]]; then
     fi
 fi
 
+
+LOCALGO=~/local/go
+if [[ -d $LOCALGO ]]; then
+    GOBIN=$LOCALGO/bin
+    if [[ -d $GOBIN ]]; then
+        export PATH=$PATH:$GOBIN
+    fi
+    export GOPATH=$LOCALGO:$GOPATH
+fi
+
 if [ -f ~/.zshenv-local ]; then
     source ~/.zshenv-local
 fi

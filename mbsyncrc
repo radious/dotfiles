@@ -26,7 +26,7 @@ BufferLimit 500M
 IMAPAccount fb
 host outlook.office365.com
 User wojtyniak@fb.com
-PassCmd "security find-generic-password -a wojtyniak@fb.com -w"
+PassCmd "security find-generic-password -a wojtyniak@fb.com -w -l'fb imap'"
 SSLType IMAPS
 Timeout 600
 #PipelineDepth 2 # Uncomment in case of problems with syncing

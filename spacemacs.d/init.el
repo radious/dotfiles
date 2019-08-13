@@ -41,7 +41,7 @@ This function should only modify configuration layer settings."
      clojure
      emacs-lisp
      git
-     (go :variables gofmt-command "goimports")
+     (go :variables gofmt-command "goimports" go-tab-width 2 go-format-before-save t)
      helm
      javascript
      markdown
@@ -428,10 +428,13 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil)
    dotspacemacs-pretty-docs nil))
 
-(defun dotspacemacs/load-local-config ()
-  "Look for local configuration file and load user-init and user-config from them"
-  (if (file-readable-p "~/.spacemacs.d/local.el")
-       (load "~/.spacemacs.d/local.el")))
+(defun dotspacemacs/user-env ()
+  "Environment variables setup.
+This function defines the environment variables for your Emacs session. By
+default it calls `spacemacs/load-spacemacs-env' which loads the environment
+variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
+See the header of this file for more information."
+  (spacemacs/load-spacemacs-env))
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -445,11 +448,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
                                             ("org" . "orgmode.org/elpa/") 
                                             ("gnu" . "elpa.gnu.org/packages/"))) 
   ;; Load local user-init if present
-  (dotspacemacs/load-local-config)(when (bound-and-true-p dotspacemacs-directory)
-                                    (add-to-list 'load-path dotspacemacs-directory)
-                                    (let ((dotspacemacs-custom-file (concat dotspacemacs-directory "custom.el")))
-                                      (setq custom-file dotspacemacs-custom-file)
-                                      (load-file dotspacemacs-custom-file)))
+  ;; (dotspacemacs/load-local-config)
+  (when (bound-and-true-p dotspacemacs-directory)
+    (add-to-list 'load-path dotspacemacs-directory)
+    (let ((dotspacemacs-custom-file (concat dotspacemacs-directory "custom.el")))
+      (setq custom-file dotspacemacs-custom-file)
+      (load-file dotspacemacs-custom-file)))
   (if (fboundp 'dotspacemacs/user-init-local)
       (dotspacemacs/user-init-local)))
 
